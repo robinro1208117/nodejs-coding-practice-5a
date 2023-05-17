@@ -62,7 +62,7 @@ app.put("/movies/:movieId/", async (req, res) => {
     const details = req.body;
     const { directorId, movieName, leadActor } = details;
 
-    const sql = `UPDATE  movie SET director_id=${directorId},movie_name='${movieName}',lead_actor='${leadActor}' where movie_id=${movieId}`;
+    const sql = `UPDATE  movie SET director_id=${directorId},movie_name='${movieName}',lead_actor='${leadActor}'   where movie_id=${movieId}`;
     const val = await db.run(sql);
     console.log(val);
     res.send("Movie Details Updated");
