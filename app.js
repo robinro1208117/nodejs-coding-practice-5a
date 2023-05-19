@@ -99,7 +99,7 @@ app.get("/directors/:directorId/movies/", async (req, res) => {
   try {
     const { directorId } = req.params;
     const sql = `select movie_name as movieName from movie where director_id=${directorId}`;
-    const val = await db.all(sql);
+    const val = await db.get(sql);
 
     res.send(val);
   } catch (err) {
